@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Marvels Platform — Multi-Tenant Commerce &amp; Operations</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License https://github.com/rafgraph/spa-github-pages
+      var l = window.location;
+      var segments = l.pathname.split('/').filter(Boolean);
+      var knownRoots = ['shop', 'search', 'collections', 'cart', 'checkout', 'category', 'product', 'admin'];
+      // If the first segment is not a recognized top-level app route, it is a subfolder/repo path (e.g. /marvels-platform/)
+      var pathSegmentsToKeep = (segments.length > 0 && !knownRoots.includes(segments[0])) ? 1 : 0;
+
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
